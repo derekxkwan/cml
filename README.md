@@ -1,5 +1,6 @@
 # [cmlsynth~] v0.1alpha for Pure Data
-## released under gpl v3.0
+(released under gpl v3.0)
+
 
 
 Based on "Coupled Map Lattices as Musical Instruments" by Janko Gravner and Kyle Johnson, this Pd external is the product of Derek Kwan working together with Kyle Johnson. Work on this external is in the very initial (testing) stages and not reflective of initial final product.
@@ -7,7 +8,7 @@ Based on "Coupled Map Lattices as Musical Instruments" by Janko Gravner and Kyle
 
 ## args
 * max lattice size, specified lattice size, epsilon, omega, k
-** (epsilon, omega, and k are bounded by [0,1])
+    * (epsilon, omega, and k are bounded by [0,1])
 
 ## inlets
 * messages, lattice size, eps, omega, k
