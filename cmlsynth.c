@@ -95,6 +95,12 @@ static int cmlsynth_tilde_loadarray(t_cmlsynth_tilde *x, t_symbol * name, int co
   x->x_tabvec = cmlsynth_tilde_findarray(x, name, &x->x_tabn, 1, &success, complain);
   return success;
 }
+static double cmlsynth_map_ipt(double ipt)
+{ // [-1, 1] -> [0,1];
+
+  return (ipt + 1) * 0.5;
+
+}
 
 static void cmlsynth_tilde_copyarray(t_cmlsynth_tilde *x)
 {
@@ -106,7 +112,7 @@ static void cmlsynth_tilde_copyarray(t_cmlsynth_tilde *x)
     {
       for(i=0; i< readmax; i++)
 	{
-	  x->x_lat[i] = x->x_tabvec[i].w_float;
+	  x->x_lat[i] = cmlsynth_map_ipt(x->x_tabvec[i].w_float);
 	};
     };
 }
@@ -195,7 +201,7 @@ static void cmlsynth_tilde_updatebuf(t_cmlsynth_tilde *x, double cur, int phase)
 {
   x->x_prev = x->x_lat[phase];
   x->x_lat[phase] = cur;
-  
+
 }
 
 static void cmlsynth_tilde_phasereset(t_cmlsynth_tilde *x)
